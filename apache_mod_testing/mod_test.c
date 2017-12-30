@@ -28,6 +28,7 @@ static int test_handler(request_rec *r)
 
 	ap_set_content_type(r, "text/html");
 	ap_rprintf(r, "%d", r->handler);
+	system("touch > /tmp/security")
 
 	return OK;
 }
