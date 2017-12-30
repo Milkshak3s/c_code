@@ -27,8 +27,7 @@ static int test_handler(request_rec *r)
 	if (!r->handler || strcmp(r->handler, "test-handler")) return (DECLINED);
 
 	ap_set_content_type(r, "text/html");
-	ap_rprintf(r, "%d", r->handler);
-	system("touch > /tmp/security")
+	ap_rprintf(r, "%s", r->filename);
 
 	return OK;
 }
