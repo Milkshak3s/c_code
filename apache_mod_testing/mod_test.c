@@ -17,7 +17,7 @@ module AP_MODULE_DECLARE_DATA	test_module =
 	register_hooks	/* Our hook registering function */
 };
 
-static void register_hooks(apr_piil_t *pool)
+static void register_hooks(apr_pool_t *pool)
 {
 	ap_hook_handler(test_handler, NULL, NULL, APR_HOOK_LAST);
 }
